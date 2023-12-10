@@ -1,0 +1,6 @@
+{% load crispy_forms_field %}
+
+{% for field in form %}
+    {% crispy_field field %}
+{% endfor %}
+{% load crispy_forms_tags %}
