@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International scholarships Listing</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <h2 style="text-align: center; ">Local Scholarships Listing</h2>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." >
+    <ul id="myUL" >
+    <table class="fancy-table">
+        <tr>
+            <th>Scholarship Name</th>
+        </tr>
+    </table>
+      <li><a href="https://acecambodia.org/ACEscholarship?fbclid=IwAR3Aq7Qeq6MSu5SWTX7f1NuG1Fr_IRclwv6xAcmSfFv7tSlE0ObWYjaNUr0 ">ACE</a></li>
+      <li><a href="https://www.cadt.edu.kh/scholarship/?fbclid=IwAR2gF0Mr7PFhqRI5dC51TIvunn5MZD2SpjnAUNer8hr9xBATtyKzx7ItVrg">CADT</a></li>
+    
+      <li><a href="https://www.facebook.com/universityofcambodia?mibextid=LQQJ4d">University of Canbodia </a></li>
+      <li><a href="https://www.facebook.com/rupp.edu.kh?mibextid=LQQJ4d">RUPP</a></li>
+    
+      <li><a href="https://www.facebook.com/AUPPkh?mibextid=LQQJ4d">AUPP</a></li>
+      <li><a href="https://www.facebook.com/num.edu.kh?mibextid=LQQJ4d">NUM</a></li>
+      <li><a href="https://www.facebook.com/paragonisc?mibextid=LQQJ4d">Paragon</a></li>
+    
+      <li><a href="https://t.me/+QGxlNWcpj3JlNGU1?fbclid=IwAR3pcT0ugpK65iCoN8ClneCoj0ETYzgAyWWSSprG5VTl9BrkjGuIZ4NpDrI">IFL</a></li>
+      <li><a href="https://t.me/+nI5iKcQ4HmVhNDc1?fbclid=IwAR0VojRFC8QktLY4kOzWpxwDWihdinJKyKQzTEBST-JS-OTYGYOOpnDIt8M">LIMKOKWING</a></li>
+      <li><a href="https://www.facebook.com/rufa.edu.kh?mibextid=LQQJ4d">RUFA</a></li>
+    </ul>
+      </ul>
+</body>
+
+<script>
+    function myFunction() {
+      // Declare variables
+        var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+    
