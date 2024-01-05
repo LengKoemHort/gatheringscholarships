@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="/templates/base.html" class="nav-item nav-link active">Home</a>
-                <a href="/templates/about.html" class="nav-item nav-link">About</a>
+                <a href="{% url 'aboutus' %}" class="nav-item nav-link">About</a>
                 <a href="/templates/courses.html" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -88,7 +88,7 @@
                                     <h3>Quick Search</h3>
                                 </div>
                                 <div class="portlet-content">
-                                    <form id="quick-search-form" class="mb-3" action="/templates/account/International.html" method="get">
+                                    <form id="quick-search-form" class="mb-3" action="{% url 'international' %}" method="get">
                                         <fieldset>
                                             <div class="form-group field-awardsearch-name">
                                                 <input type="text" id="awardsearch-name" class="form-control" name="AwardSearch[name]" placeholder="Search by scholarships name">
@@ -362,7 +362,7 @@
                                     <h3>Quick Search</h3>
                                 </div>
                                 <div class="portlet-content">
-                                    <form id="quick-search-form" class="mb-3" action="/templates/local.html" method="get">
+                                    <form id="quick-search-form" class="mb-3" action="{% url 'local' %}" method="get">
                                         <fieldset>
                                             <div class="form-group field-awardsearch-name">
                                                 <input type="text" id="awardsearch-name" class="form-control" style="padding: 6px 6px" name="AwardSearch[name]" placeholder="Search by scholarships name">
@@ -1056,7 +1056,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                             <h5 style="color: black;" class="mb-3">Skilled Instructors</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+
                         </div>
                     </div>
                 </div>
@@ -1065,7 +1065,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
                             <h5 style="color: black;" class="mb-3">International Scholarships</h5>
-                            <p >Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                           
                         </div>
                     </div>
                 </div>
@@ -1074,7 +1074,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-home text-primary mb-4"></i>
                             <h5 style="color: black;" class="mb-3">Local Scholarships</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -1083,7 +1083,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
                             <h5 style="color: black;" class="mb-3">Countries</h5>
-                            <p>Lists All Countries that allows for Cambodian citizen</p>
+                           
                         </div>
                     </div>
                 </div>
@@ -1091,8 +1091,7 @@
         </div>
     </div>
     <!-- Service End -->
-
-
+    <h1 class="text-primary text-lg-center">Welcome to Gathering Scholarships</h1>
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -1103,31 +1102,30 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                    <h1 class="mb-4">Welcome to Gathering Scholarships</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <h2 class="text-primary text-lg-center">About Us: </h2>
+                    <h4 class="text-primary text-lg-center">Your Gateway to Educational Opportunities in
+                        Cambodia!
+                        </h4>
+                    <p class="mb-4">At <strong>Gathering Scholarships</strong>, our commitment is to empower Cambodian students by providing a
+                                    comprehensive and accessible platform for discovering scholarship opportunities. We understand
+                                    the transformative power of education, and our mission is to bridge the gap between ambitious
+                                    Cambodian learners and the scholarships that can shape their futures.</p>
+                    <p class="mb-4">Remember, each scholarship has its own eligibility criteria and application process, so it’s important to read through all the details carefully. Good luck with your scholarship dream!</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Our Mission</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>What Sets Us Apart</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Our Commitment</p>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                    <div>
+                        <p class="text-primary text-lg-center">Gathering Scholarships <br> – Nurturing Dreams, Empowering Futures.</p>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'aboutus' %}">Read More</a>
                 </div>
             </div>
         </div>
@@ -1182,14 +1180,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="container">
@@ -1204,8 +1194,9 @@
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
                             <a href="">Home</a>
-                            <a href="{% url 'home' %}">logout</a>
+                            <a href="{% url 'logout' %}">Logout</a>
                             <a href="">Help</a>
+                            <a href="">FQAs</a>
                         </div>
                     </div>
                 </div>

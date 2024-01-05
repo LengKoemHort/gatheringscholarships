@@ -40,18 +40,19 @@ INSTALLED_APPS = [
     'social_django',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
+    'rest_framework',
+    'corsheaders',
     'allauth.socialaccount.providers.google',
-
     'crispy_forms',
+    'ScholarshipApp',
 ]
-
+CORS_ORIGIN_ALLOW_ALL = True
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'social.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,12 +76,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-                'django.template.context_processors.request',
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'social.wsgi.application'
 
@@ -88,10 +88,24 @@ WSGI_APPLICATION = 'social.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+import pymysql
+pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'scholarship_database',
+        'USER':'root',
+        'PASSWORD':'',
+        'PORT':'3306',
+        'HOST':'localhost',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
+        'CONN_MAX_AGE': 600,
+        'TEST': {
+            'NAME': 'test_db',
+        },
+        'AUTOCOMMIT': True,
     }
 }
 
@@ -158,6 +172,8 @@ SOCIALACCOUNT_PROVIDERS = {
          }
      }
  }
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
@@ -201,3 +217,4 @@ ACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_QUERY_EMAIL = True
 
 ACCOUNT_SESSION_REMEMBER = True
+
